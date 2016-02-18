@@ -3,64 +3,32 @@
 <html>
 <head>
 	<title>Psychic Game</title>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/style/reset.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
 
-<h1>The Psychic Game</h1>
-<div id="guesses">Your Guesses So Far:</div>
-<div id="wins">Wins:</div>
-<div id="losses">Losses:</div>
-<div id="guessesLeft">Guesses Left:</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Psychic Game</h3>
+			  </div>
+			  <div class="panel-body">
+			   
+				<div id="guesses">Your Guesses So Far:</div>
+				<div id="wins">Wins:</div>
+				<div id="losses">Losses:</div>
+				<div id="guessesLeft">Guesses Left: 9</div>
+			  </div>
+			</div>
+		</div>
+	</div>
 
+</div>
 
-<script type="text/javascript">
-
-	var computerChoices = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-	var computerGuess = "";
-	var userGuess = "";
-	var pastGuesses = [];
-	var guessesLeft = 9;
-	var wins = 0;
-	var losses = 0;
-
-	window.onload = function(event) {
-		onRoundStart();	
-	};
-
-	var onRoundStart = function(){
-		alert("Computer Chose a Random Letter!");
-		computerGuess = computerChoices[Math.floor((Math.random() * 26) + 1)];
-		document.querySelector('#guesses').innerHTML = 'Your Guesses So Far:';
-		document.querySelector('#guessesLeft').innerHTML = 'Guesses Left:' + " ";
-		guessesLeft = 9;
-		pastGuesses = [];
-	};
-
-	document.onkeyup = function(event) {
-		userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-		pastGuesses.push(userGuess);
-		document.querySelector('#guesses').innerHTML = 'Your Guesses So Far:' + " " + pastGuesses;
-		compare(userGuess,computerGuess);
-	};
-
-	var compare = function(uGuess,cGuess) {
-		if (uGuess === cGuess){
-			alert("Nice Job! You Won!");
-			wins = wins + 1
-			document.querySelector('#wins').innerHTML = "Wins:" + " " + wins;
-			onRoundStart();		
-			}
-		else{
-			guessesLeft = guessesLeft - 1;
-			document.querySelector('#guessesLeft').innerHTML = 'Guesses Left:' + " " + guessesLeft;
-			}
-		if (guessesLeft == 0) {
-			losses = losses + 1
-			document.querySelector('#losses').innerHTML = "Losses:" + " " + losses;
-			alert("Sorry, You Lost :( ")
-			onRoundStart();
-			}
-	};
-</script>
 </body>
 </html>
