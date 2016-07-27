@@ -15,6 +15,3 @@ HTML, CSS, Boostrap, MomentJS, Javascript, JQuery & Firebase
   <tabTrigger></tabTrigger>
 </snippet>
 
-
-
-.
