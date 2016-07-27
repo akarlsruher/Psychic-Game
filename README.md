@@ -9,7 +9,7 @@ https://radiant-harbor-81315.herokuapp.com
 ## Technologies Used
 HTML, CSS, Boostrap, MomentJS, Javascript, JQuery & Firebase
 ## Screen Shots
-![Screen1]https://s32.postimg.org/5bagin7fp/Screen_Shot_2016_07_26_at_8_02_26_PM.png "Psychic Game")
+![Screen1](https://s32.postimg.org/5bagin7fp/Screen_Shot_2016_07_26_at_8_02_26_PM.png "Psychic Game")
 ## License
 © Copyright Aaron Karlsruher 2016
   <tabTrigger></tabTrigger>
